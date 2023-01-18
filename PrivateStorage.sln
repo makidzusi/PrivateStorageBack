@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrivateStorage.API", "PrivateStorage.API\PrivateStorage.API.csproj", "{E9514A30-B4A1-4D51-A20B-53F641BD5B58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9514A30-B4A1-4D51-A20B-53F641BD5B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9514A30-B4A1-4D51-A20B-53F641BD5B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9514A30-B4A1-4D51-A20B-53F641BD5B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9514A30-B4A1-4D51-A20B-53F641BD5B58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDB672B8-0D57-41C9-A89F-D9170663840E}
+	EndGlobalSection
+EndGlobal
