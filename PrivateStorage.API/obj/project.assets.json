@@ -107,6 +107,29 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "PrivateStorage.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLogic.dll": {}
+        }
+      },
+      "PrivateStorage.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PrivateStorage.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PrivateStorage.Core.dll": {}
+        }
       }
     }
   },
@@ -451,11 +474,23 @@
         "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLogic/BusinessLogic.csproj",
+      "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
+    },
+    "PrivateStorage.Core/1.0.0": {
+      "type": "project",
+      "path": "../PrivateStorage.Core/PrivateStorage.Core.csproj",
+      "msbuildProject": "../PrivateStorage.Core/PrivateStorage.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BusinessLogic >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.1",
+      "PrivateStorage.Core >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -485,7 +520,14 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projects\\PrivateStorage\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Projects\\PrivateStorage\\BusinessLogic\\BusinessLogic.csproj"
+            },
+            "C:\\Projects\\PrivateStorage\\PrivateStorage.Core\\PrivateStorage.Core.csproj": {
+              "projectPath": "C:\\Projects\\PrivateStorage\\PrivateStorage.Core\\PrivateStorage.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

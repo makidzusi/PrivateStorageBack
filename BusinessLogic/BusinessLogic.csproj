@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PrivateStorage.Core\PrivateStorage.Core.csproj" />
+  </ItemGroup>
+
 </Project>
