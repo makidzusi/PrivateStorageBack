@@ -1,5 +1,7 @@
 using BusinessLogic.Services;
+using Microsoft.EntityFrameworkCore;
 using PrivateStorage.Core.Services;
+using PrivateStorage.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<PrivateCloudContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PrivateCloudContext"));
+});
+
 builder.Services.AddTransient<IFileService, FileService>();
+
 
 var app = builder.Build();
 
