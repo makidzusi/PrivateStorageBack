@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using PrivateStorage.Core.Services;
 using PrivateStorage.DataAccess;
+using PrivateStorage.DataAccess.Entities;
 using System.Net.Http.Headers;
 
 namespace PrivateStorage.API.Controllers
@@ -48,9 +50,10 @@ namespace PrivateStorage.API.Controllers
             }
         }
         [HttpDelete]
+        [Authorize]
         public async Task<IActionResult> DeleteFileAsync()
         {
-            return Ok(true);
+            return Ok();
         }
     }
 }

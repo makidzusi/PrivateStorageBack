@@ -11,8 +11,8 @@ using PrivateStorage.DataAccess;
 namespace PrivateStorage.DataAccess.Migrations
 {
     [DbContext(typeof(PrivateCloudContext))]
-    [Migration("20230121143303_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230122121158_init45")]
+    partial class init45
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace PrivateStorage.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("peoples");
                 });
 
             modelBuilder.Entity("PrivateStorage.DataAccess.Entities.UserFile", b =>
@@ -58,9 +58,6 @@ namespace PrivateStorage.DataAccess.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatorId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("FileName")
                         .IsRequired()
                         .HasColumnType("text");
@@ -70,25 +67,7 @@ namespace PrivateStorage.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatorId");
-
                     b.ToTable("UserFile");
-                });
-
-            modelBuilder.Entity("PrivateStorage.DataAccess.Entities.UserFile", b =>
-                {
-                    b.HasOne("PrivateStorage.DataAccess.Entities.User", "Creator")
-                        .WithMany("UserFiles")
-                        .HasForeignKey("CreatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Creator");
-                });
-
-            modelBuilder.Entity("PrivateStorage.DataAccess.Entities.User", b =>
-                {
-                    b.Navigation("UserFiles");
                 });
 #pragma warning restore 612, 618
         }

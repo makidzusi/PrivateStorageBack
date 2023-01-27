@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace PrivateStorage.DataAccess.Entities
 {
+    [Table("peoples")]
     public sealed class User
     {
     
@@ -10,7 +13,8 @@ namespace PrivateStorage.DataAccess.Entities
         public string NickName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public ICollection<UserFile> UserFiles { get; set; }
+        //[JsonIgnore]
+       // public ICollection<UserFile> Files { get; set; }
 
     }
 

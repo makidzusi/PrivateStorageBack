@@ -13,8 +13,6 @@ namespace PrivateStorage.DataAccess.Entities
         public int Id { get; set; }
         public string FileName { get; set; }
         public int Size { get; set; }
-        public User Creator { get; set; }
-        public int CreatorId { get; set; }
     }
 
     public class FileConfiguration : IEntityTypeConfiguration<UserFile>
