@@ -178,7 +178,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Projects\\PrivateStorage\\PrivateStorage.DataAccess\\PrivateStorage.DataAccess.csproj": {
+                "projectPath": "C:\\Projects\\PrivateStorage\\PrivateStorage.DataAccess\\PrivateStorage.DataAccess.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

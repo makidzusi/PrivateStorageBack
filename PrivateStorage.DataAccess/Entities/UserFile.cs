@@ -5,9 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PrivateStorage.DataAccess.Entities
 {
+    [Table("UserFiles")]
     public sealed class UserFile
     {
         public int Id { get; set; }
@@ -19,7 +21,7 @@ namespace PrivateStorage.DataAccess.Entities
     {
         public void Configure(EntityTypeBuilder<UserFile> builder)
         {
-            builder.HasKey(x => x.Id);
+     
             builder.Property(x => x.FileName).IsRequired(true);
 
         }

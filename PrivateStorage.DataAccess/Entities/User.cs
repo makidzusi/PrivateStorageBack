@@ -5,16 +5,16 @@ using System.Text.Json.Serialization;
 
 namespace PrivateStorage.DataAccess.Entities
 {
-    [Table("peoples")]
+    [Table("Users")]
     public sealed class User
     {
-    
+        
         public int Id { get; set; }
         public string NickName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        //[JsonIgnore]
-       // public ICollection<UserFile> Files { get; set; }
+        [JsonIgnore]
+        public ICollection<UserFile> Files { get; set; }
 
     }
 
@@ -22,8 +22,7 @@ namespace PrivateStorage.DataAccess.Entities
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-           
-            builder.HasKey(x => x.Id);
+          
 
             builder.Property(x => x.Email).IsRequired(true);
 

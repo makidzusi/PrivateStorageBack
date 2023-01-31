@@ -19,8 +19,8 @@ namespace PrivateStorage.DataAccess
             modelBuilder.ApplyConfiguration(new FileConfiguration());
         }
 
-        public DbSet<User> Users;
-        public DbSet<UserFile> Files;
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserFile> Files { get; set; }
 
     }
 }

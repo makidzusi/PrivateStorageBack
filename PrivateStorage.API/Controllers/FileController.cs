@@ -14,6 +14,7 @@ namespace PrivateStorage.API.Controllers
     {
         private readonly IFileService _fileService;
         private readonly PrivateCloudContext _context;
+ 
         public FileController(IFileService fileService, PrivateCloudContext context)
         {
             _fileService = fileService;
@@ -53,7 +54,7 @@ namespace PrivateStorage.API.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteFileAsync()
         {
-            return Ok();
+            return Ok(HttpContext.Items.ToList());
         }
     }
 }

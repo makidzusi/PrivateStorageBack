@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PrivateStorage.DataAccess;
@@ -11,9 +12,11 @@ using PrivateStorage.DataAccess;
 namespace PrivateStorage.DataAccess.Migrations
 {
     [DbContext(typeof(PrivateCloudContext))]
-    partial class PrivateCloudContextModelSnapshot : ModelSnapshot
+    [Migration("20230127115432_add_email")]
+    partial class addemail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
