@@ -15,17 +15,17 @@ namespace PrivateStorage.API.Middleware
             _next = next;
         }
 
-        public async Task Invoke(HttpContext context, IUserService userService)
+        public async Task InvokeAsync(HttpContext context, IUserService userService)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             if (token != null)
-                AttachUserToContext(context, userService, token);
+               await AttachUserToContext(context, userService, token);
 
             await _next(context);
         }
 
-        public async void AttachUserToContext(HttpContext context, IUserService userService, string token)
+        public async Task AttachUserToContext(HttpContext context, IUserService userService, string token)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace PrivateStorage.API.Middleware
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var userEmail = jwtToken.Claims.First(x => x.Type == ClaimTypes.Email).Value;
                 Console.WriteLine(userEmail);
-                //context.Items["User"] = await userService.getUserByIdAsync(userId);
+                context.Items["User"] = await userService.getUserByEmailAsync(userEmail);
             }
             catch
             {

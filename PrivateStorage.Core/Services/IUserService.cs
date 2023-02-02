@@ -11,6 +11,7 @@ namespace PrivateStorage.Core.Services
     public interface IUserService
     {
         Task<User> getUserByIdAsync(int id);
+        Task<User> getUserByEmailAsync(string email);
         Task<User> createUserAsync(CreateUserRequest user);
     }
 }
